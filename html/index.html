@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Title</title>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="../bootstrap-3.3.5-dist/css/bootstrap.min.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">首页</a></li>
+            <li><a href="#">新闻</a></li>
+            <li><a href="#">论坛</a></li>
+            <li>
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                   aria-expanded="false">
+                    全部 <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">生活</a></li>
+                    <li><a href="#">教育</a></li>
+                    <li><a href="#">经济</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <form class="form-horizontal col-sm-offset-3">
+        <div class="form-group">
+            <div class="col-sm-6 text-center">
+                <h3>用户登录</h3>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="username" class="col-sm-2 control-label">
+                用户名
+            </label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" placeholder="输入用户名" id="username">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-sm-2 control-label">
+                密码
+            </label>
+            <div class="col-sm-4">
+                <input type="password" class="form-control" placeholder="输入密码" id="password">
+            </div>
+        </div>
+        <div class="form-group text-center">
+            <div class="col-sm-6">
+                <button class="btn btn-danger" id="cmdLogin" data-loading-text="登录中..." autofocus="off" type="button">
+                    登录
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="../js/jquery.min.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="../bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+        $('#cmdLogin').popover({
+            content: '<b>用户名</b>和密码必须填写',
+            title: '错误',
+            html: true
+        });
+
+        $('#cmdLogin').click(function () {
+            /*$(this).button('loading');
+             setTimeout("login()", 3000)*/
+        });
+    });
+
+    var login = function () {
+        $('#cmdLogin').button('reset');
+    };
+</script>
+</body>
+</html>
